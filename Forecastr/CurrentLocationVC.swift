@@ -19,6 +19,7 @@ class CurrentLocationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
+        configureUI()
         getForecast()
     }
     
@@ -33,7 +34,6 @@ class CurrentLocationVC: UIViewController {
         view.addSubview(conditionsLabel)
         view.addSubview(forecastButton)
         
-        tempLabel.text = String(weatherForecast.current.tempF) + " F"
         configureForecastButton()
         
         tempLabel.textColor = .secondaryLabel
@@ -41,7 +41,6 @@ class CurrentLocationVC: UIViewController {
         tempLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
         tempLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        conditionsLabel.text = weatherForecast.current.condition.text
         conditionsLabel.textColor = .label
         conditionsLabel.textAlignment = .center
         conditionsLabel.font = UIFont.preferredFont(forTextStyle: .title1)
@@ -60,7 +59,7 @@ class CurrentLocationVC: UIViewController {
     }
     
     private func configureForecastButton() {
-        forecastButton.addTarget(self, action: #selector(pushThreeDayForecastVC), for: .touchUpInside)
+        forecastButton.addTarget(self, action: #selector(pushForecastListVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             forecastButton.heightAnchor.constraint(equalToConstant: 50),
@@ -68,6 +67,14 @@ class CurrentLocationVC: UIViewController {
             forecastButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             forecastButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
+    }
+    
+    @objc func pushForecastListVC() {
+        guard let _ = weatherForecast else { return }
+        
+        let forecast = weatherForecast.forecast.forecastday
+        let forecastDetailsVC = ForecastListVC(forecastDays: forecast)
+        navigationController?.pushViewController(forecastDetailsVC, animated: true)
     }
     
     private func getForecast() {
@@ -78,7 +85,8 @@ class CurrentLocationVC: UIViewController {
             case .success(let weatherForecast):
                 self.weatherForecast = weatherForecast
                 DispatchQueue.main.async {
-                    self.configureUI()
+                    self.tempLabel.text = String(weatherForecast.current.tempF) + " F"
+                    self.conditionsLabel.text = weatherForecast.current.condition.text
                 }
             case .failure(let error):
                 // show alert or something with error message
