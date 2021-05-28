@@ -39,6 +39,7 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
+                decoder.dateDecodingStrategy = .secondsSince1970
                 let forecast = try decoder.decode(WeatherForecast.self, from: data)
                 completed(.success(forecast))
             } catch {

@@ -29,7 +29,7 @@ struct Forecast: Codable {
 }
 
 struct ForecastDay: Codable {
-    let date: String
+    let dateEpoch: Date
     let day: Day
 }
 

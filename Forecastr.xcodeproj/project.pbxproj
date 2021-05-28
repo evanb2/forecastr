@@ -20,6 +20,7 @@
 		A2D687E626617A810064E12F /* FRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D687E526617A810064E12F /* FRButton.swift */; };
 		A2D687EB266198150064E12F /* ForecastListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D687EA266198150064E12F /* ForecastListVC.swift */; };
 		A2D688012661AA550064E12F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D688002661AA550064E12F /* DayCell.swift */; };
+		A2D688072661B2770064E12F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D688062661B2770064E12F /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A2D687E526617A810064E12F /* FRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRButton.swift; sourceTree = "<group>"; };
 		A2D687EA266198150064E12F /* ForecastListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListVC.swift; sourceTree = "<group>"; };
 		A2D688002661AA550064E12F /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		A2D688062661B2770064E12F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		A2D68783266026B40064E12F /* Forecastr */ = {
 			isa = PBXGroup;
 			children = (
+				A2D688052661B2620064E12F /* Extensions */,
 				A2D687CE26615B670064E12F /* Model */,
 				A2D68784266026B40064E12F /* AppDelegate.swift */,
 				A2D68786266026B40064E12F /* SceneDelegate.swift */,
@@ -149,6 +152,14 @@
 				A2D687CF26615BA60064E12F /* WeatherForecast.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A2D688052661B2620064E12F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2D688062661B2770064E12F /* Date+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 				A2D68787266026B40064E12F /* SceneDelegate.swift in Sources */,
 				A2D687DD266161A80064E12F /* FRError.swift in Sources */,
 				A2D687CA26615A4E0064E12F /* CurrentLocationVC.swift in Sources */,
+				A2D688072661B2770064E12F /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,7 +28,7 @@ class DayCell: UITableViewCell {
     }
     
     func set(forecastDay: ForecastDay) {
-        dayLabel.text = forecastDay.date
+        dayLabel.text = forecastDay.dateEpoch.convertToDayFormat()
         conditionLabel.text = forecastDay.day.condition.text
         minTempLabel.text = String(forecastDay.day.mintempF)
         maxTempLabel.text = String(forecastDay.day.maxtempF)
