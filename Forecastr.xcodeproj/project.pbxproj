@@ -17,6 +17,7 @@
 		A2D687D026615BA60064E12F /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D687CF26615BA60064E12F /* WeatherForecast.swift */; };
 		A2D687D826615F460064E12F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D687D726615F460064E12F /* NetworkManager.swift */; };
 		A2D687DD266161A80064E12F /* FRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D687DC266161A80064E12F /* FRError.swift */; };
+		A2D687E626617A810064E12F /* FRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D687E526617A810064E12F /* FRButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		A2D687CF26615BA60064E12F /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
 		A2D687D726615F460064E12F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A2D687DC266161A80064E12F /* FRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRError.swift; sourceTree = "<group>"; };
+		A2D687E526617A810064E12F /* FRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				A2D687C926615A4E0064E12F /* CurrentLocationVC.swift */,
 				A2D687D726615F460064E12F /* NetworkManager.swift */,
 				A2D687DC266161A80064E12F /* FRError.swift */,
+				A2D687E526617A810064E12F /* FRButton.swift */,
 			);
 			path = Forecastr;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				A2D687D026615BA60064E12F /* WeatherForecast.swift in Sources */,
 				A2D68785266026B40064E12F /* AppDelegate.swift in Sources */,
 				A2D687D826615F460064E12F /* NetworkManager.swift in Sources */,
+				A2D687E626617A810064E12F /* FRButton.swift in Sources */,
 				A2D68787266026B40064E12F /* SceneDelegate.swift in Sources */,
 				A2D687DD266161A80064E12F /* FRError.swift in Sources */,
 				A2D687CA26615A4E0064E12F /* CurrentLocationVC.swift in Sources */,
