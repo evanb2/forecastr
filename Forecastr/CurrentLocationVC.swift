@@ -14,7 +14,7 @@ class CurrentLocationVC: UIViewController {
     
     let tempLabel = UILabel()
     let conditionsLabel = UILabel()
-    let forecastButton = UIButton()
+    let forecastButton = FRButton(title: "3 Day Forecast", backgroundColor: .systemBlue)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,8 @@ class CurrentLocationVC: UIViewController {
         view.addSubview(forecastButton)
         
         tempLabel.text = String(weatherForecast.current.tempF) + " F"
+        configureForecastButton()
+        
         tempLabel.textColor = .secondaryLabel
         tempLabel.textAlignment = .center
         tempLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
@@ -44,13 +46,6 @@ class CurrentLocationVC: UIViewController {
         conditionsLabel.textAlignment = .center
         conditionsLabel.font = UIFont.preferredFont(forTextStyle: .title1)
         conditionsLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        forecastButton.backgroundColor = .systemBlue
-        forecastButton.setTitleColor(.white, for: .normal)
-        forecastButton.layer.cornerRadius = 10
-        forecastButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
-        forecastButton.setTitle("Forecast", for: .normal)
-        forecastButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             tempLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -61,7 +56,13 @@ class CurrentLocationVC: UIViewController {
             conditionsLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: 40),
             conditionsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             conditionsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-
+        ])
+    }
+    
+    private func configureForecastButton() {
+        forecastButton.addTarget(self, action: #selector(pushThreeDayForecastVC), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
             forecastButton.heightAnchor.constraint(equalToConstant: 50),
             forecastButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             forecastButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
