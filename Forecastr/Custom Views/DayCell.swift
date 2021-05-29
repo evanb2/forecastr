@@ -44,6 +44,8 @@ class DayCell: UITableViewCell {
         
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         conditionLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        minTempLabel.textColor = .secondaryLabel
         minTempLabel.translatesAutoresizingMaskIntoConstraints = false
         maxTempLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -52,11 +54,12 @@ class DayCell: UITableViewCell {
             conditionLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             
             dayLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            dayLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            dayLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             
             maxTempLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            maxTempLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            maxTempLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             
+            minTempLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             minTempLabel.trailingAnchor.constraint(equalTo: maxTempLabel.leadingAnchor, constant: -10),
         ])
     }
