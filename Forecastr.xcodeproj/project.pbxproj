@@ -111,19 +111,14 @@
 		A2D68783266026B40064E12F /* Forecastr */ = {
 			isa = PBXGroup;
 			children = (
+				A2D6880F2661B5820064E12F /* Managers */,
+				A2D6880E2661B5720064E12F /* Custom Views */,
+				A2D6880D2661B5530064E12F /* Utilities */,
+				A2D6880C2661B5380064E12F /* Screens */,
+				A2D6880B2661B50E0064E12F /* Support */,
 				A2D688052661B2620064E12F /* Extensions */,
 				A2D687CE26615B670064E12F /* Model */,
-				A2D68784266026B40064E12F /* AppDelegate.swift */,
-				A2D68786266026B40064E12F /* SceneDelegate.swift */,
-				A2D6878D266026B50064E12F /* Assets.xcassets */,
-				A2D6878F266026B50064E12F /* LaunchScreen.storyboard */,
 				A2D68792266026B50064E12F /* Info.plist */,
-				A2D687C926615A4E0064E12F /* CurrentLocationVC.swift */,
-				A2D687D726615F460064E12F /* NetworkManager.swift */,
-				A2D687DC266161A80064E12F /* FRError.swift */,
-				A2D687E526617A810064E12F /* FRButton.swift */,
-				A2D687EA266198150064E12F /* ForecastListVC.swift */,
-				A2D688002661AA550064E12F /* DayCell.swift */,
 			);
 			path = Forecastr;
 			sourceTree = "<group>";
@@ -160,6 +155,51 @@
 				A2D688062661B2770064E12F /* Date+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A2D6880B2661B50E0064E12F /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A2D68784266026B40064E12F /* AppDelegate.swift */,
+				A2D68786266026B40064E12F /* SceneDelegate.swift */,
+				A2D6878D266026B50064E12F /* Assets.xcassets */,
+				A2D6878F266026B50064E12F /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		A2D6880C2661B5380064E12F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A2D687C926615A4E0064E12F /* CurrentLocationVC.swift */,
+				A2D687EA266198150064E12F /* ForecastListVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A2D6880D2661B5530064E12F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A2D687DC266161A80064E12F /* FRError.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A2D6880E2661B5720064E12F /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2D687E526617A810064E12F /* FRButton.swift */,
+				A2D688002661AA550064E12F /* DayCell.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		A2D6880F2661B5820064E12F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A2D687D726615F460064E12F /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
