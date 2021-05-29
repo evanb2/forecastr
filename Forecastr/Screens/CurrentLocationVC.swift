@@ -13,6 +13,7 @@ class CurrentLocationVC: UIViewController {
     var weatherForecast: WeatherForecast!
     
     let tempLabel = UILabel()
+    let unitsLabel = UILabel()
     let conditionsLabel = UILabel()
     let forecastButton = FRButton(title: "3 Day Forecast", backgroundColor: .systemBlue)
 
@@ -31,17 +32,23 @@ class CurrentLocationVC: UIViewController {
     
     private func configureUI() {
         view.addSubview(tempLabel)
+        view.addSubview(unitsLabel)
         view.addSubview(conditionsLabel)
         view.addSubview(forecastButton)
         
         configureForecastButton()
         
-        tempLabel.textColor = .secondaryLabel
+        tempLabel.textColor = .label
         tempLabel.textAlignment = .center
-        tempLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
+        tempLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         tempLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        conditionsLabel.textColor = .label
+        unitsLabel.text = "°F"
+        unitsLabel.textColor = .label
+        unitsLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        unitsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        conditionsLabel.textColor = .secondaryLabel
         conditionsLabel.textAlignment = .center
         conditionsLabel.font = UIFont.preferredFont(forTextStyle: .title1)
         conditionsLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -49,10 +56,13 @@ class CurrentLocationVC: UIViewController {
         NSLayoutConstraint.activate([
             tempLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             tempLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            tempLabel.heightAnchor.constraint(equalToConstant: 55),
+            
+            unitsLabel.leadingAnchor.constraint(equalTo: tempLabel.trailingAnchor, constant: 10),
+            unitsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            unitsLabel.topAnchor.constraint(equalTo: tempLabel.topAnchor),
             
             conditionsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            conditionsLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: 40),
+            conditionsLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: 20),
             conditionsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             conditionsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
