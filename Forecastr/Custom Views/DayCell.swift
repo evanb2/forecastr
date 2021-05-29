@@ -14,6 +14,7 @@ class DayCell: UITableViewCell {
     let dayLabel = UILabel()
     let minTempLabel = UILabel()
     let maxTempLabel = UILabel()
+    let conditionIcon = UIImageView()
     let conditionLabel = UILabel()
     
     var forecastDay: ForecastDay!
@@ -32,17 +33,27 @@ class DayCell: UITableViewCell {
         conditionLabel.text = forecastDay.day.condition.text
         minTempLabel.text = String(Int(forecastDay.day.mintempF))
         maxTempLabel.text = String(Int(forecastDay.day.maxtempF))
+        
+        let iconPathArray = forecastDay.day.condition.icon.split(separator: "/")
+        let iconFolder = iconPathArray.contains("day") ? "day" : "night"
+        guard let iconCode = iconPathArray.last?.split(separator: ".")[0] else { return }
+        conditionIcon.image = UIImage(named: "\(iconFolder)/\(iconCode)")
     }
     
     private func configure() {
         selectionStyle = .none
         
         addSubview(dayLabel)
+        addSubview(conditionIcon)
         addSubview(conditionLabel)
         addSubview(minTempLabel)
         addSubview(maxTempLabel)
         
+        dayLabel.font = UIFont.preferredFont(forTextStyle: .title2)
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
+        conditionIcon.translatesAutoresizingMaskIntoConstraints = false
+        
+        conditionLabel.textAlignment = .center
         conditionLabel.translatesAutoresizingMaskIntoConstraints = false
         
         minTempLabel.textColor = .secondaryLabel
@@ -50,8 +61,15 @@ class DayCell: UITableViewCell {
         maxTempLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            conditionIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            conditionIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            conditionIcon.heightAnchor.constraint(equalToConstant: 30),
+            conditionIcon.widthAnchor.constraint(equalToConstant: 30),
+            
+            conditionLabel.topAnchor.constraint(equalTo: conditionIcon.bottomAnchor, constant: 5),
             conditionLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            conditionLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            conditionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            conditionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
             dayLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             dayLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
