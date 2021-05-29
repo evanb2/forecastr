@@ -85,7 +85,7 @@ class CurrentLocationVC: UIViewController {
             case .success(let weatherForecast):
                 self.weatherForecast = weatherForecast
                 DispatchQueue.main.async {
-                    self.tempLabel.text = String(weatherForecast.current.tempF) + " F"
+                    self.tempLabel.text = String(Int(weatherForecast.current.tempF))
                     self.conditionsLabel.text = weatherForecast.current.condition.text
                 }
             case .failure(let error):
