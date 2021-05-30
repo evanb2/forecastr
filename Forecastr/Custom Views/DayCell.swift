@@ -14,7 +14,7 @@ class DayCell: UITableViewCell {
     let dayLabel = UILabel()
     let minTempLabel = UILabel()
     let maxTempLabel = UILabel()
-    let conditionIcon = UIImageView()
+    let conditionIcon = FRIconImageView(frame: .zero)
     let conditionLabel = UILabel()
     
     var forecastDay: ForecastDay!
@@ -33,11 +33,7 @@ class DayCell: UITableViewCell {
         conditionLabel.text = forecastDay.day.condition.text
         minTempLabel.text = String(Int(forecastDay.day.mintempF))
         maxTempLabel.text = String(Int(forecastDay.day.maxtempF))
-        
-        let iconPathArray = forecastDay.day.condition.icon.split(separator: "/")
-        let iconFolder = iconPathArray.contains("day") ? "day" : "night"
-        guard let iconCode = iconPathArray.last?.split(separator: ".")[0] else { return }
-        conditionIcon.image = UIImage(named: "\(iconFolder)/\(iconCode)")
+        conditionIcon.set(icon: forecastDay.day.condition.icon)
     }
     
     private func configure() {
@@ -51,7 +47,6 @@ class DayCell: UITableViewCell {
         
         dayLabel.font = UIFont.preferredFont(forTextStyle: .title2)
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
-        conditionIcon.translatesAutoresizingMaskIntoConstraints = false
         
         conditionLabel.textAlignment = .center
         conditionLabel.translatesAutoresizingMaskIntoConstraints = false

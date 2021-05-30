@@ -15,7 +15,7 @@ class CurrentLocationVC: UIViewController {
     let tempLabel = UILabel()
     let unitsLabel = UILabel()
     let conditionsLabel = UILabel()
-    let conditionsIcon = UIImageView()
+    let conditionIcon = FRIconImageView(frame: .zero)
     let forecastButton = FRButton(title: "3 Day Forecast", backgroundColor: .systemBlue)
 
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class CurrentLocationVC: UIViewController {
     private func configureUI() {
         view.addSubview(tempLabel)
         view.addSubview(unitsLabel)
-        view.addSubview(conditionsIcon)
+        view.addSubview(conditionIcon)
         view.addSubview(conditionsLabel)
         view.addSubview(forecastButton)
         
@@ -50,9 +50,6 @@ class CurrentLocationVC: UIViewController {
         unitsLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
         unitsLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        conditionsIcon.clipsToBounds = true
-        conditionsIcon.translatesAutoresizingMaskIntoConstraints = false
-        
         conditionsLabel.textColor = .secondaryLabel
         conditionsLabel.textAlignment = .center
         conditionsLabel.font = UIFont.preferredFont(forTextStyle: .title1)
@@ -60,16 +57,16 @@ class CurrentLocationVC: UIViewController {
         
         NSLayoutConstraint.activate([
             tempLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            tempLabel.bottomAnchor.constraint(equalTo: conditionsIcon.topAnchor, constant: -10),
+            tempLabel.bottomAnchor.constraint(equalTo: conditionIcon.topAnchor, constant: -10),
             
             unitsLabel.leadingAnchor.constraint(equalTo: tempLabel.trailingAnchor, constant: 10),
             unitsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             unitsLabel.topAnchor.constraint(equalTo: tempLabel.topAnchor),
             
-            conditionsIcon.bottomAnchor.constraint(equalTo: conditionsLabel.topAnchor, constant: -20),
-            conditionsIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            conditionsIcon.heightAnchor.constraint(equalToConstant: 50),
-            conditionsIcon.widthAnchor.constraint(equalToConstant: 50),
+            conditionIcon.bottomAnchor.constraint(equalTo: conditionsLabel.topAnchor, constant: -20),
+            conditionIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            conditionIcon.heightAnchor.constraint(equalToConstant: 50),
+            conditionIcon.widthAnchor.constraint(equalToConstant: 50),
             
             conditionsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             conditionsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -107,11 +104,7 @@ class CurrentLocationVC: UIViewController {
                 DispatchQueue.main.async {
                     self.tempLabel.text = String(Int(weatherForecast.current.tempF))
                     self.conditionsLabel.text = weatherForecast.current.condition.text
-                    
-                    let iconPathArray = weatherForecast.current.condition.icon.split(separator: "/")
-                    let iconFolder = iconPathArray.contains("day") ? "day" : "night"
-                    guard let iconCode = iconPathArray.last?.split(separator: ".")[0] else { return }
-                    self.conditionsIcon.image = UIImage(named: "\(iconFolder)/\(iconCode)")
+                    self.conditionIcon.set(icon: weatherForecast.current.condition.icon)
                 }
             case .failure(let error):
                 // show alert or something with error message
