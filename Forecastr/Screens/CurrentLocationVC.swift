@@ -53,6 +53,8 @@ class CurrentLocationVC: UIViewController {
         conditionsLabel.textColor = .secondaryLabel
         conditionsLabel.textAlignment = .center
         conditionsLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+        conditionsLabel.lineBreakMode = .byWordWrapping
+        conditionsLabel.numberOfLines = 4
         conditionsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
