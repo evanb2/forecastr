@@ -12,11 +12,12 @@ class CurrentLocationVC: FRDataLoadingVC {
     let location = "Boulder"
     var weatherForecast: WeatherForecast!
     
-    let tempLabel = UILabel()
-    let unitsLabel = UILabel()
-    let conditionsLabel = UILabel()
+    let padding: CGFloat = 20
+    let tempLabel = FRLabel(font: .largeTitle, textAlignment: .center)
+    let unitsLabel = FRLabel(font: .subheadline)
+    let conditionsLabel = FRSecondaryLabel(font: .title1, textAlignment: .center)
     let conditionIcon = FRIconImageView(frame: .zero)
-    let forecastButton = FRButton(title: "3 Day Forecast", backgroundColor: .systemBlue)
+    let forecastButton = FRButton(title: "Forecast", backgroundColor: .systemBlue)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,40 +41,28 @@ class CurrentLocationVC: FRDataLoadingVC {
         
         configureForecastButton()
         
-        tempLabel.textColor = .label
-        tempLabel.textAlignment = .center
-        tempLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
-        tempLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         unitsLabel.text = "°F"
-        unitsLabel.textColor = .label
-        unitsLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        unitsLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        conditionsLabel.textColor = .secondaryLabel
-        conditionsLabel.textAlignment = .center
-        conditionsLabel.font = UIFont.preferredFont(forTextStyle: .title1)
         conditionsLabel.lineBreakMode = .byWordWrapping
         conditionsLabel.numberOfLines = 4
-        conditionsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             tempLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             tempLabel.bottomAnchor.constraint(equalTo: conditionIcon.topAnchor, constant: -10),
             
             unitsLabel.leadingAnchor.constraint(equalTo: tempLabel.trailingAnchor, constant: 10),
-            unitsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            unitsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             unitsLabel.topAnchor.constraint(equalTo: tempLabel.topAnchor),
             
-            conditionIcon.bottomAnchor.constraint(equalTo: conditionsLabel.topAnchor, constant: -20),
+            conditionIcon.bottomAnchor.constraint(equalTo: conditionsLabel.topAnchor),
             conditionIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             conditionIcon.heightAnchor.constraint(equalToConstant: 50),
             conditionIcon.widthAnchor.constraint(equalToConstant: 50),
             
             conditionsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             conditionsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            conditionsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            conditionsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            conditionsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            conditionsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
         ])
     }
     
@@ -82,9 +71,9 @@ class CurrentLocationVC: FRDataLoadingVC {
         
         NSLayoutConstraint.activate([
             forecastButton.heightAnchor.constraint(equalToConstant: 50),
-            forecastButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            forecastButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            forecastButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            forecastButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
+            forecastButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            forecastButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
         ])
     }
     

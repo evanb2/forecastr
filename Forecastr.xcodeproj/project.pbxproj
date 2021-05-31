@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A296558A2663F9A300E7EF84 /* FRIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29655892663F9A300E7EF84 /* FRIconImageView.swift */; };
 		A296558F2665434D00E7EF84 /* FRDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A296558E2665434D00E7EF84 /* FRDataLoadingVC.swift */; };
+		A296559426654AED00E7EF84 /* FRLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A296559326654AED00E7EF84 /* FRLabel.swift */; };
+		A296559926654CCC00E7EF84 /* FRSecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A296559826654CCC00E7EF84 /* FRSecondaryLabel.swift */; };
 		A2D68785266026B40064E12F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D68784266026B40064E12F /* AppDelegate.swift */; };
 		A2D68787266026B40064E12F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D68786266026B40064E12F /* SceneDelegate.swift */; };
 		A2D6878E266026B50064E12F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2D6878D266026B50064E12F /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		A29655892663F9A300E7EF84 /* FRIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRIconImageView.swift; sourceTree = "<group>"; };
 		A296558E2665434D00E7EF84 /* FRDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRDataLoadingVC.swift; sourceTree = "<group>"; };
+		A296559326654AED00E7EF84 /* FRLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRLabel.swift; sourceTree = "<group>"; };
+		A296559826654CCC00E7EF84 /* FRSecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRSecondaryLabel.swift; sourceTree = "<group>"; };
 		A2D68781266026B40064E12F /* Forecastr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecastr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D68784266026B40064E12F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2D68786266026B40064E12F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				A2D688002661AA550064E12F /* DayCell.swift */,
 				A29655892663F9A300E7EF84 /* FRIconImageView.swift */,
 				A296558E2665434D00E7EF84 /* FRDataLoadingVC.swift */,
+				A296559326654AED00E7EF84 /* FRLabel.swift */,
+				A296559826654CCC00E7EF84 /* FRSecondaryLabel.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -344,10 +350,12 @@
 				A2D68785266026B40064E12F /* AppDelegate.swift in Sources */,
 				A2D687D826615F460064E12F /* NetworkManager.swift in Sources */,
 				A2D687E626617A810064E12F /* FRButton.swift in Sources */,
+				A296559926654CCC00E7EF84 /* FRSecondaryLabel.swift in Sources */,
 				A2D68787266026B40064E12F /* SceneDelegate.swift in Sources */,
 				A2D687DD266161A80064E12F /* FRError.swift in Sources */,
 				A2D687CA26615A4E0064E12F /* CurrentLocationVC.swift in Sources */,
 				A2D688072661B2770064E12F /* Date+Ext.swift in Sources */,
+				A296559426654AED00E7EF84 /* FRLabel.swift in Sources */,
 				A296558A2663F9A300E7EF84 /* FRIconImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
