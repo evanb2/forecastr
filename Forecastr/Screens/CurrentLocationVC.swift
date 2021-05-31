@@ -23,6 +23,10 @@ class CurrentLocationVC: FRDataLoadingVC {
         super.viewDidLoad()
         configureViewController()
         configureUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getForecast()
     }
     
