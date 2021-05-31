@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A296558A2663F9A300E7EF84 /* FRIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29655892663F9A300E7EF84 /* FRIconImageView.swift */; };
+		A296558F2665434D00E7EF84 /* FRDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A296558E2665434D00E7EF84 /* FRDataLoadingVC.swift */; };
 		A2D68785266026B40064E12F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D68784266026B40064E12F /* AppDelegate.swift */; };
 		A2D68787266026B40064E12F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D68786266026B40064E12F /* SceneDelegate.swift */; };
 		A2D6878E266026B50064E12F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2D6878D266026B50064E12F /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		A29655892663F9A300E7EF84 /* FRIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRIconImageView.swift; sourceTree = "<group>"; };
+		A296558E2665434D00E7EF84 /* FRDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRDataLoadingVC.swift; sourceTree = "<group>"; };
 		A2D68781266026B40064E12F /* Forecastr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecastr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D68784266026B40064E12F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2D68786266026B40064E12F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				A2D687E526617A810064E12F /* FRButton.swift */,
 				A2D688002661AA550064E12F /* DayCell.swift */,
 				A29655892663F9A300E7EF84 /* FRIconImageView.swift */,
+				A296558E2665434D00E7EF84 /* FRDataLoadingVC.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2D687EB266198150064E12F /* ForecastListVC.swift in Sources */,
+				A296558F2665434D00E7EF84 /* FRDataLoadingVC.swift in Sources */,
 				A2D688012661AA550064E12F /* DayCell.swift in Sources */,
 				A2D687D026615BA60064E12F /* WeatherForecast.swift in Sources */,
 				A2D68785266026B40064E12F /* AppDelegate.swift in Sources */,

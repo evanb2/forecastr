@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CurrentLocationVC: UIViewController {
+class CurrentLocationVC: FRDataLoadingVC {
     
     let location = "Boulder"
     var weatherForecast: WeatherForecast!
@@ -97,8 +97,12 @@ class CurrentLocationVC: UIViewController {
     }
     
     private func getForecast() {
+        showLoadingView()
+        
         NetworkManager.shared.getForecast(for: location) { [weak self] result in
             guard let self = self else { return }
+            
+            self.dismissLoadingView()
             
             switch result {
             case .success(let weatherForecast):
