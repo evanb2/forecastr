@@ -10,24 +10,21 @@ import XCTest
 
 class ForecastrTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    func testSetsIconImageFromPath() {
+        var iconPath = "//cdn.weatherapi.com/weather/64x64/day/176.png"
+        let iconImageView = FRIconImageView(frame: .zero)
+        
+        XCTAssertNil(iconImageView.image?.imageAsset, "FRIconImageView initialized without image.")
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        iconImageView.set(icon: iconPath)
+        
+        XCTAssertNotNil(iconImageView.image?.imageAsset, "Renders the condition icon from a given icon path.")
+        
+        iconImageView.image = nil
+        iconPath = "this/is/not/a/correct/path"
+        iconImageView.set(icon: iconPath)
+        
+        XCTAssertNil(iconImageView.image?.imageAsset, "Renders no icon given incorrect icon path.")
     }
 
 }
